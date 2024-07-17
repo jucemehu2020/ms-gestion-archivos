@@ -2,16 +2,18 @@ spring:
   application:
     name: gestion-archivos-ms
   datasource:
-    url: jdbc:mysql://docker.unicauca.edu.co:3307/computacion
-    username: computacion
-    password: DB-C0mput4c10N
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
+
 logging:
   level:
     org:
       hibernate:
         SQL=debug: debug
+
 server:
-  port: 8020
+   port: ${SPRING_SERVER_ARCHIVOS_PORT}
